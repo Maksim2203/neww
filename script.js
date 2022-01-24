@@ -52,31 +52,28 @@
 
 
 
-function one(){
-    return function two(secretNumber){
-        console.log(secretNumber);
+function one() {
+    return function two(secretNumber) {
         const userNumber = +prompt("Введите число");
-        if (isNaN(userNumber)){
+        if (isNaN(userNumber)) {
             alert('Введите число!');
             two(secretNumber);
-        } else if (userNumber == false){
+        } else if (userNumber == false) {
             return
         }
-
-        if (userNumber != secretNumber){
-            if (secretNumber < userNumber){
+        if (userNumber != secretNumber) {
+            if (secretNumber < userNumber) {
                 alert('Загаданное число меньше!');
                 two(secretNumber);
-            } else if (secretNumber >> userNumber){
+            } else if (secretNumber > userNumber) {
                 alert('Загаданное число больше!');
                 two(secretNumber);
             }
-            
         } else {
             alert('Вы победили')
             return
         }
     }
 }
-constnumber = one();
-number(Math.floor(Math.random()*101));
+let constNumber = one();
+constNumber(Math.floor(Math.random() * 101));
