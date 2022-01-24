@@ -55,15 +55,18 @@
 function one() {
     return function two(secretNumber) {
         const userNumber = +prompt("Введите число");
-        if (isNaN(userNumber)) {
-            alert('Введите число!');
-            two(secretNumber);
+        if (userNumber == '') {
+            alert('Введи число')
+            two(secretNumber)
         } else if (userNumber == false) {
             return
-        }
-        else if (isNaN(userNumber)) {
+        } else if (isNaN(userNumber)) {
             alert('Введи число')
-            two(hiddenNumber)
+            two(secretNumber)
+        } else if (isNaN(userNumber)) {
+            alert('Введите число!');
+            two(secretNumber);
+
         }
         if (userNumber != secretNumber) {
             if (secretNumber < userNumber) {
@@ -81,3 +84,4 @@ function one() {
 }
 let constNumber = one();
 constNumber(Math.floor(Math.random() * 101));
+
