@@ -61,6 +61,10 @@ function one() {
         } else if (userNumber == false) {
             return
         }
+        else if (isNaN(userNumber)) {
+            alert('Введи число')
+            two(hiddenNumber)
+        }
         if (userNumber != secretNumber) {
             if (secretNumber < userNumber) {
                 alert('Загаданное число меньше!');
